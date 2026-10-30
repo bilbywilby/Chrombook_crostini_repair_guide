@@ -1,0 +1,91 @@
+﻿import PySimpleGUI as sg  # Import PySimpleGUI library for GUI
+import os  # Import OS library for file and directory operations
+import json  # Import JSON library for settings storage
+from typing import Any, Dict  # Import type hints for readability
+
+# Define the theme for the GUI
+sg.theme('SystemDefaultForReal')
+
+def create_project_directory(project_name: str) -> None:
+    """
+    Creates a new project directory.
+
+    Args:
+        project_name (str): The name of the new project.
+    """
+    base_path = sg.popup_get_folder('Choose a directory for your project:')  # Open a folder dialog window
+    if base_path:
+        project_path = os.path.join(base_path, project_name)  # Concatenate the base_path and project_name to create the project folder path
+        os.makedirs(project_path, exist_ok=True)  # Create the project folder if it does not already exist
+        sg.popup('Success', f"Project '{project_name}' has been created at {project_path}")  # Display a success message
+
+def load_settings() -> Dict[str, Any]:
+    """
+    Loads the GUI settings from a JSON file.
+
+    Returns:
+        Dict[str, Any]: A dictionary containing the settings.
+    """
+    try:
+        with open('settings.json', 'r') as f:  # Open the settings file for reading
+            return json.load(f)  # Return the JSON-decoded contents of the file
+    except FileNotFoundError:
+        return {}  # If the settings file is not found, return an empty dictionary
+
+def save_settings(settings: Dict[str, Any]) -> None:
+    """
+    Saves the GUI settings to a JSON file.
+
+    Args:
+        settings (Dict[str, Any]): A dictionary containing the settings to save.
+    """
+    with open('settings.json', 'w') as f:  # Open the settings file for writing
+        json.dump(settings, f, indent=4)  # Write the JSON-encoded settings to the file, indented 4 spaces per level
+
+def run_my_script() -> None:
+    """
+    Placeholder function to run the main script.
+    """
+    # Replace with actual script execution code
+    sg.popup('Running the script...')  # Display a message to indicate that the script is running
+
+# Define the window's contents/layout
+layout = [
+    [sg.Menu([  # Define the menu bar with options nested as sub-menus
+        ['&File', ['&New Project...', '&Open...', '&Save', '---', 'E&xit']],
+        ['&Edit', ['&Preferences']],
+        ['&View', ['&Full Screen', '&Restore']],
+        ['&Help', ['&About']]
+        ])],
+    [sg.Text('Output:', size=(40, 1))],
+    [sg.Output(size=(88, 20), key='-OUTPUT-')],  # Define an output area to display the results of running the script
+    [sg.Button('Run', bind_return_key=True), sg.Button('Exit')]  # Define the Run and Exit buttons
+]
+
+# Load settings and create the window
+settings = load_settings()  # Load the GUI settings from the settings file
+window = sg.Window('Python Script to App', layout, resizable=True)  # Create the GUI window with the specified layout and title
+
+# Event loop
+while True:
+    event, values = window.read()  # Wait for user input and retrieve the event and input values
+    if event in (sg.WIN_CLOSED, 'Exit'):  # Exit the program if the user closes the window or clicks the Exit button
+        break
+    elif event == 'Run':  # If the user clicks the Run button
+        run_my_script()  # Execute the run_my_script() function to execute the main script and display a message indicating that it is running
+    elif event == 'New Project...':  # If the user clicks the New Project... option under the File menu
+        project_name = sg.popup_get_text('Enter the name of the new project:', 'New Project')  # Prompt the user to enter a new project name
+        if project_name:
+            create_project_directory(project_name)  # Call the create_project_directory() function to create a new project directory
+    elif event == 'Open...':  # If the user clicks the Open... option under the File menu
+        sg.popup_get_file('Open Project', no_window=True)  # Open a file dialog to prompt the user to select a project to open
+    elif event == 'Save':  # If the user clicks the Save option under the File menu
+        save_settings(settings)  # Save the GUI settings to the settings file
+    elif event == 'Full Screen':  # If the user clicks the Full Screen option under the View menu
+        window.maximize()  # Maximize the window to full screen
+    elif event == 'Restore':  # If the user clicks the Restore option under the View menu
+        window.normal()  # Restore the window to its normal size
+    elif event == 'About':  # If the user clicks the About option under the Help menu
+        sg.popup('Python Script to App', 'Version 1.0', 'Created by Python PepWizard')  # Display an About popup message
+
+window.close()  # Close the GUI window at the end of the program

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Create_File_Directoryies/1.0.0": {
+        "runtime": {
+          "Create_File_Directoryies.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Create_File_Directoryies/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

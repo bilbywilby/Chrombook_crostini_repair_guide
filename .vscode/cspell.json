@@ -1,0 +1,28 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "borderwidth",
+        "boxlayout",
+        "gridlayout",
+        "halign",
+        "highlightthickness",
+        "jsonstore",
+        "kivy",
+        "listadapter",
+        "MEIPASS",
+        "onefile",
+        "pady",
+        "pyinstaller",
+        "pyproject",
+        "recycleview",
+        "scrollview",
+        "typemoq",
+        "viewclass",
+        "vsix"
+    ],
+    "ignoreWords": [],
+    "import": []
+}

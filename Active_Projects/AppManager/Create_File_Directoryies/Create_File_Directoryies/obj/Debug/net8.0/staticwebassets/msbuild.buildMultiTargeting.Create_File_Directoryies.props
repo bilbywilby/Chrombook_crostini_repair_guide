@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Create_File_Directoryies.props" />
+</Project>

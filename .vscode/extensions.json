@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "formulahendry.code-runner",
+    "jakebecker.elixir-ls",
+    "cake-build.cake-vscode",
+    "mhutchie.git-graph",
+    "evolution-gaming.evolution-gaming--vscode-eslint",
+    "donjayamanne.python-environment-manager",
+    "franneck94.c-cpp-runner",
+    "metabob.metabob",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "ms-python.python",
+    "ms-python.flake8",
+    "visualstudioexptteam.vscodeintellicode",
+    "vscode-icons-team.vscode-icons",
+    "doggy8088.netcore-extension-pack",
+    "vscjava.vscode-java-pack"
+  ]
+}

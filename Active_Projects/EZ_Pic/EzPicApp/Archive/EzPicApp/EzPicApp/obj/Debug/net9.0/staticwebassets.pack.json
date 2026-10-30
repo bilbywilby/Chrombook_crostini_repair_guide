@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\obj\\Debug\\net9.0\\compressed\\2seu0gem0v.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\obj\\Debug\\net9.0\\scopedcss\\bundle\\EzPicApp.styles.css",
+      "PackagePath": "staticwebassets\\EzPicApp.styles.css"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "c:\\Users\\aad53\\OneDrive\\Desktop\\EzPicApp\\EzPicApp\\EzPicApp\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EzPicApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.EzPicApp.props",
+      "PackagePath": "build\\EzPicApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.EzPicApp.props",
+      "PackagePath": "buildMultiTargeting\\EzPicApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.EzPicApp.props",
+      "PackagePath": "buildTransitive\\EzPicApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

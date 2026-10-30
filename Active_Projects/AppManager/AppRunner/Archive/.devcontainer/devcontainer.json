@@ -1,0 +1,43 @@
+{
+    "name": ".NET (C#), Node.js (TypeScript) & MS SQL",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp",
+                "ms-mssql.mssql",
+                "julialang.language-julia"
+            ],
+            "settings": {
+                "mssql.connections": [
+                    {
+                        "server": "localhost,1433",
+                        "database": "",
+                        "authenticationType": "SqlLogin",
+                        "user": "sa",
+                        "password": "P@ssw0rd",
+                        "emptyPasswordInput": false,
+                        "savePassword": false,
+                        "profileName": "mssql-container",
+                        "hostname": "localhost"
+                    }
+                ]
+            }
+        },
+        "mounts": [
+            {
+                "source": "${localWorkspaceFolder}",
+                "target": "/workspace",
+                "bind": true
+            }
+        ]
+    },
+    "runArgs": [
+        "forwardPorts=1433:1433"
+    ],
+    "postCreateCommand": "bash .devcontainer/mssql/postCreateCommand.sh 'P@ssw0rd' './bin/Debug/' './.devcontainer/mssql/'",
+    "remoteUser": "vscode",
+    "remoteUserUid": "1000"
+}

@@ -1,0 +1,133 @@
+{
+    // This configuration file is used by the VS Code editor to override the default settings.
+    // Python settings
+    "python.defaultInterpreterPath": "path/to/python",
+    "python.pythonPath": "path/to/python",
+    "python.globalModuleInstallation": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=C0111", // Disabling missing docstring warnings.
+        "--enable=W0614", // Removing unused imports.
+        "--disable=R0903" // Disabling too few public methods.
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "88"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "error",
+        "reportUnusedImport": "warning",
+        "reportMissingModuleSource": "none"
+    },
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.analysis.extraPaths": [
+        "path/to/extra/modules"
+    ],
+    "python.autoComplete.addBrackets": true,
+    "python.autoComplete.extraPaths": [
+        "path/to/extra/modules"
+    ],
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.launchArgs": [
+        "-m",
+        "module.name"
+    ],
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "python.dataScience.allowImportFromNotebook": true,
+    "python.dataScience.enableCellCodeLens": true,
+    "python.dataScience.jupyterServerURI": "http://localhost:8888/",
+    "python.dataScience.notebookFileRoot": "${workspaceFolder}",
+    "python.dataScience.useDefaultConfigForJupyter": true,
+    // Editor settings
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+    },
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    // Extension settings
+    "eslint.alwaysShowStatus": true,
+    "eslint.experimental.incrementalSync": true,
+    "extensions.ignoreRecommendations": false,
+    "grunt.autoDetect": "on",
+    "gulp.autoDetect": "on",
+    "jake.autoDetect": "on",
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path-windows": "C:\\Users\\aad53\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vscode-kubernetes.minikube-path-windows": "C:\\Users\\aad53\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+    },
+    // CMake settings
+    "cmake.configureOnOpen": true,
+    "cmake.showOptionsMovedNotification": false,
+    // Terminal settings
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    // File settings
+    "files.autoSave": "onFocusChange",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.empty.hint": "hidden",
+    // Window settings
+    "window.zoomLevel": 1,
+    "explorer.confirmDragAndDrop": false,
+    // Miscellaneous settings
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[snippets]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "redhat.telemetry.enabled": true,
+    "vscode-edge-devtools.useHttps": true,
+    "git.autofetch": true,
+    "git.allowForcePush": true,
+    "git.allowNoVerifyCommit": true,
+    "git.branchPrefix": "test",
+    "git.branchRandomName.enable": true,
+    "git.branchSortOrder": "alphabetically",
+    "git.enableSmartCommit": true,
+    "task.allowAutomaticTasks": "on",
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.experimental.incrementalSync": true,
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path-windows": "C:\\Users\\aad53\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vscode-kubernetes.minikube-path-windows": "C:\\Users\\aad53\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+    },
+    "grunt.autoDetect": "on",
+    "gulp.autoDetect": "on",
+    "jake.autoDetect": "on",
+    "explorer.confirmDragAndDrop": false,
+    "elixirLS.envVariables": {
+        "_": "${workspaceFolder}/deps/elixir/lib/_build/dev/consoles/0mldp1l123456789]0_/erlang.cookie",
+        "MIX_APP_PATH": "${workspaceFolder}",
+        "MIX_HOME": "${workspaceFolder}/.mix",
+        "ERLANG_OTP_VERSION": "23",
+        "ELIXIR_CLIENT": "true",
+        "JULIA_PROJECT": "${workspaceFolder}"
+    }
+}

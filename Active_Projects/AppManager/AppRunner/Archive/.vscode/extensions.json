@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "julialang.language-julia",
+        "franneck94.c-cpp-runner",
+        "ms-edgedevtools.vscode-edge-devtools"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "mix",
+			"task": "Print app tree",
+			"problemMatcher": [],
+			"label": "mix: Print app tree"
+		}
+	]
+}
