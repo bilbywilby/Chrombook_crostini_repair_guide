@@ -1,18 +1,26 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -Eeuo pipefail
 
-# Use absolute path for backup directory
-BACKUP_DIR="$HOME/.cache/crostini_backups"
+BACKUP_DIR="${HOME}/Linux/.backups"
+SOURCE_DIR="${HOME}/Linux"
+LOG_FILE="${HOME}/.cache/crostini_backup.log"
+
+mkdir -p "$BACKUP_DIR" "$(dirname "$LOG_FILE")"
+
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-BACKUP_FILE="$BACKUP_DIR/workspace_$TIMESTAMP.tar.gz"
+ARCHIVE_NAME="crostini_backup_${TIMESTAMP}.tar.gz"
+DEST_PATH="$BACKUP_DIR/$ARCHIVE_NAME"
 
-mkdir -p "$BACKUP_DIR"
+echo "[INFO] Starting backup of $SOURCE_DIR to $DEST_PATH" | tee -a "$LOG_FILE"
+tar -czf "$DEST_PATH" -C "$(dirname "$SOURCE_DIR")" "$(basename "$SOURCE_DIR")" --exclude=".backups" 2>> "$LOG_FILE"
 
-if [ -d "$HOME/Linux" ]; then
-    echo "Creating backup of $HOME/Linux..."
-    tar -czf "$BACKUP_FILE" -C "$HOME" Linux/
-    echo "Backup created successfully at: $BACKUP_FILE"
+# Verify archive size
+if [ -s "$DEST_PATH" ]; then
+    echo "[PASS] Backup created successfully: $(du -sh "$DEST_PATH" | cut -f1)" | tee -a "$LOG_FILE"
 else
-    echo "Warning: $HOME/Linux directory does not exist. Skipping backup."
+    echo "[ERROR] Backup archive is empty or failed." | tee -a "$LOG_FILE"
     exit 1
 fi
+
+# GFS Retention Pruning (Prune archives older than 90 days)
+find "$BACKUP_DIR" -name "crostini_backup_*.tar.gz" -mtime +90 -delete
