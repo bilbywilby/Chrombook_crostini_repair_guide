@@ -5,3 +5,4 @@ __pycache__/
 FETCH_HEAD
 manifest_report.json
 .pytest_cache/
+crostini-repair-guide-wiki.tar.gz
