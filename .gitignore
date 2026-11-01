@@ -6,3 +6,4 @@ FETCH_HEAD
 manifest_report.json
 .pytest_cache/
 crostini-repair-guide-wiki.tar.gz
+env_audit_*.txt
